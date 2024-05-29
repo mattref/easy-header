@@ -1,17 +1,26 @@
 {
   "name": "easy-header",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "prettier --check \"**/*.{ts,js,tsx,jsx}\" \"**/*.html\" \"**/*.{css,scss}\" && eslint \"**/*.{ts,js,tsx,jsx}\"",
+    "format": "prettier --write \"**/*.{ts,js,tsx,jsx}\" \"**/*.html\" \"**/*.{css,scss}\""
   },
   "dependencies": {
     "solid-js": "^1.8.15"
   },
   "devDependencies": {
+    "@types/node": "^20.12.12",
+    "@typescript-eslint/parser": "^7.10.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-solid": "^0.14.0",
+    "globals": "^15.3.0",
+    "prettier": "^3.2.5",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vite-plugin-solid": "^2.10.2"
