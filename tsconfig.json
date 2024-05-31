@@ -19,7 +19,11 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Extra types */
+    /* https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#types */
+    "types": ["chrome-types"]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

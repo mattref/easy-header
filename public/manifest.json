@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/chrome-manifest",
+  "manifest_version": 3,
+  "name": "EasyHeader",
+  "version": "1.0.0",
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "index.html"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; script-src-elem 'self'; object-src 'self'"
+  },
+  "permissions": ["declarativeNetRequest"],
+  "host_permissions": ["https://*/*", "http://*/*"]
+}

@@ -1,11 +1,12 @@
 import globals from 'globals';
 import js from '@eslint/js';
 import solid from 'eslint-plugin-solid/configs/typescript.js';
-import tsParser from '@typescript-eslint/parser';
+import tseslint from 'typescript-eslint';
 import eslintConfigPrettier from 'eslint-config-prettier';
 
-export default [
+export default tseslint.config(
   js.configs.recommended,
+  ...tseslint.configs.recommended,
   {
     ignores: ['build/', 'dist/', '.vscode/', 'package-lock.json', 'pnpm-lock.yaml', 'yarn.lock'],
   },
@@ -14,12 +15,10 @@ export default [
     files: ['**/*.{ts,tsx,js,jsx}'],
     ...solid,
     languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        project: ['tsconfig.json', 'tsconfig.node.json'],
-      },
       globals: {
         ...globals.browser,
+        // `'readonly'` is equivalent to setting the value as `false`
+        chrome: 'readonly',
       },
     },
     rules: {
@@ -28,4 +27,4 @@ export default [
     },
   },
   eslintConfigPrettier,
-];
+);

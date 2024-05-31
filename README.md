@@ -27,6 +27,8 @@ It correctly bundles Solid in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 
+Additionally, a `postbuild` script will run, modifying the `dist/manifest.json` file in-place by removing the `$schema` key, which Chrome does _not_ consider a valid manifest key when loading the extension.
+
 ---
 
 ## Deployment
